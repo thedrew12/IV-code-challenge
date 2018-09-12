@@ -1,0 +1,20 @@
+
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Enterprise-Landing-Hero-Adjustment" transform="translate(-773.000000, -500.000000)">
+            <g id="Hero" transform="translate(88.000000, 66.000000)">
+                <g id="Group-12" transform="translate(437.000000, 411.000000)">
+                    <g id="video" transform="translate(249.000000, 22.000000)">
+                        <g id="Group" transform="translate(0.000000, 2.000000)">
+                            <path d="M11,0 L11,0 C17.0751322,-1.11598369e-15 22,4.92486775 22,11 L22,11 C22,17.0751322 17.0751322,22 11,22 L11,22 C4.92486775,22 -2.80872455e-15,17.0751322 -3.55271368e-15,11 L-7.10542736e-15,11 C-7.84941648e-15,4.92486775 4.92486775,1.11598369e-15 11,0 Z" id="Combined-Shape" stroke="#17191D" stroke-width="2" stroke-linecap="square"></path>
+                            <polygon id="Icon" fill="#17191D" points="9 8 14 11 9 14"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

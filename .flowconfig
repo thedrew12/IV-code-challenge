@@ -1,0 +1,10 @@
+[ignore]
+.*/node_modules/styled-components/.*
+.*/node_modules/styled-components-breakpoint/.*
+.*/flow-typed/npm
+[include]
+
+[libs]
+
+[options]
+module.ignore_non_literal_requires=true

@@ -1,0 +1,23 @@
+
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.4139558,12.000125 L19.7067592,5.70722332 C20.0977469,5.31622943 20.0977469,4.68423931 19.7067592,4.29324542 C19.3157714,3.90225153 18.6837911,3.90225153 18.2928033,4.29324542 L12,10.5861471 L5.70719665,4.29324542 C5.31620887,3.90225153 4.68422862,3.90225153 4.29324084,4.29324542 C3.90225305,4.68423931 3.90225305,5.31622943 4.29324084,5.70722332 L10.5860442,12.000125 L4.29324084,18.2930267 C3.90225305,18.6840206 3.90225305,19.3160107 4.29324084,19.7070046 C4.48823474,19.9020015 4.74422674,20 5.00021874,20 C5.25621074,20 5.51220274,19.9020015 5.70719665,19.7070046 L12,13.4141029 L18.2928033,19.7070046 C18.4877973,19.9020015 18.7437893,20 18.9997813,20 C19.2557733,20 19.5117653,19.9020015 19.7067592,19.7070046 C20.0977469,19.3160107 20.0977469,18.6840206 19.7067592,18.2930267 L13.4139558,12.000125 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Enterprise-Landing-Form-Modal" transform="translate(-1375.000000, -49.000000)">
+            <g id="--Icon" transform="translate(1371.000000, 45.000000)">
+                <g id="icon/utility/close">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="close" fill="#3D4453" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <g id="Ink" mask="url(#mask-2)" fill="#495366" fill-rule="evenodd">
+                        <rect id="Rectangle-3-Copy-2" x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
