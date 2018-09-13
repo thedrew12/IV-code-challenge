@@ -27,9 +27,11 @@ class Demo extends React.Component<Props, State> {
     workEmail: '',
     phoneNumber: ''
   };
-  onChange = (key, value) => this.setState({ [key]: value });
-  onSubmit = event => {
-    console.log(event);
+  onChange = (key: string, value: string): void =>
+    this.setState({ [key]: value });
+  onSubmit = (e: Object) => {
+    e.preventDefault();
+    // post values in state to API
   };
   render() {
     const {
@@ -41,7 +43,7 @@ class Demo extends React.Component<Props, State> {
       phoneNumber
     } = this.state;
     return (
-      <Card width="1000px">
+      <StyledCard>
         <img src={enterpriseIcon} alt="" />
         <Title>Get a demo of InVision Enterprise</Title>
         <Content>
@@ -96,38 +98,62 @@ class Demo extends React.Component<Props, State> {
               />
             </Grid>
             <Margin>
-              <Button.Primary onSubmit={this.onSubmit} type="submit">
+              <Button.Primary onClick={this.onSubmit} type="submit">
                 Request a demo
               </Button.Primary>
             </Margin>
           </form>
         </Content>
-      </Card>
+      </StyledCard>
     );
   }
 }
 
+const StyledCard = styled(Card)`
+  @media (min-width: 768px) {
+    width: 1000px;
+  }
+`;
+
 const Content = styled.div`
-  width: 600px;
-  margin: 1rem auto;
+  @media (min-width: 768px) {
+    width: 600px;
+    margin: 1rem auto;
+  }
 `;
 
 const Title = styled.div`
-  font-size: 50px;
-  text-align: center;
+  font-size: 3rem;
   font-weight: 300;
   margin-top: 3rem;
+  @media (min-width: 550px) {
+    text-align: center;
+  }
 `;
 
 const Subtitle = styled.p`
-  text-align: center;
-  margin-bottom: 1rem;
+  margin: 2rem auto;
+  line-height: 32px;
+  @media (min-width: 550px) {
+    max-width: 23rem;
+    text-align: center;
+  }
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+  label {
+    margin-top: 1rem;
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+
+    label {
+      margin: 0;
+    }
+  }
 `;
 
 const Margin = styled.div`

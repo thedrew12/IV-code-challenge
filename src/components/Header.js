@@ -17,6 +17,7 @@ const Header = ({ handleRequestDemo }: Props) => {
           <a href="https://www.invisionapp.com/">
             <img src={logo} alt="" />
           </a>
+
           <Item>
             Platform
             <img src={icon} alt="" />
@@ -40,7 +41,10 @@ const Header = ({ handleRequestDemo }: Props) => {
 };
 
 const Wrapper = styled.div`
-  padding: 2rem 3rem;
+  padding: 1rem;
+  @media (min-width: 878px) {
+    padding: 2rem 3rem;
+  }
 `;
 
 const Nav = styled(Flex)`
@@ -48,23 +52,31 @@ const Nav = styled(Flex)`
 `;
 
 const Item = styled.li`
-  font-size: 14px;
-  list-style: none;
-  margin-left: 2rem;
-  color: ${props => (props.isActive ? '#ff3366' : 'inherit')};
-  transition: color 0.15s ease-in-out;
-  :hover {
-    color: #ff3366;
-    cursor: pointer;
-  }
-  img {
-    margin-left: 5px;
-    vertical-align: middle;
+  display: none;
+  @media (min-width: 878px) {
+    display: inline-block;
+    font-size: 14px;
+    list-style: none;
+    margin-left: 2rem;
+    color: ${props => (props.isActive ? '#ff3366' : 'inherit')};
+    transition: color 0.15s ease-in-out;
+    :hover {
+      color: #ff3366;
+      cursor: pointer;
+    }
+    img {
+      margin-left: 5px;
+      vertical-align: middle;
+    }
   }
 `;
 
 const StyledButton = styled(Button.Inverse)`
-  margin-left: 2rem;
+  display: none;
+  @media (min-width: 878px) {
+    margin-left: 2rem;
+    display: inline-block;
+  }
 `;
 
 export default Header;

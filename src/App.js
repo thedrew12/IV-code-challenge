@@ -33,7 +33,7 @@ class App extends React.Component<State> {
             The world&#39;s best companies use InVision Enterprise to make the
             products you love
           </Subtitle>
-          <Flex alignItems="center" justifyContent="center">
+          <StyledFlex alignItems="center" shouldWrap>
             <Button.Primary
               onClick={() => this.setState({ isDemoModalOpen: true })}
             >
@@ -47,20 +47,20 @@ class App extends React.Component<State> {
                 Watch Video
               </Flex>
             </VideoButton>
-          </Flex>
+          </StyledFlex>
           <Image src={companyLogos} alt="" />
           <Image src={rolesIcon} alt="" />
           <SubTextWrapper>
             <TransformText>
               Transform how design drives your business
             </TransformText>
-            <Subtitle>
+            <StyledSubtitle>
               Create experiences customers love—and deliver your most
               competitive products. The most successful companies practice
               design principles across teams, transforming business outcomes.
               The InVision Enterprise platform powers this connected workflow,
               every step of the way.
-            </Subtitle>
+            </StyledSubtitle>
           </SubTextWrapper>
         </Content>
         <Modal
@@ -88,24 +88,40 @@ class App extends React.Component<State> {
 }
 
 const Content = styled.div`
-  padding: 4rem 5rem;
+  padding: 1rem;
+  @media (min-width: 550px) {
+    padding: 4rem 5rem;
+  }
 `;
 
 const Title = styled.h1`
   font-weight: 300;
-  font-size: 56px;
-  text-align: center;
+  font-size: 3rem;
   margin-top: 0;
+  @media (min-width: 550px) {
+    text-align: center;
+  }
+`;
+
+const StyledFlex = styled(Flex)`
+  justify-content: start;
+  @media (min-width: 550px) {
+    justify-content: center;
+  }
 `;
 
 const VideoButton = styled.button`
   border: none;
   cursor: pointer;
   background: transparent;
-  margin-left: 1.5rem;
-
+  margin-top: 1rem;
   :hover {
     opacity: 0.8;
+  }
+  @media (min-width: 550px) {
+    margin-top: 0;
+    margin-left: 1.5rem;
+    text-align: center;
   }
 `;
 
@@ -116,16 +132,24 @@ const PlayIcon = styled.img`
 const TransformText = styled.div`
   font-size: 36px;
   font-weight: 400;
-  text-align: center;
   margin-bottom: 2rem;
-  padding: 0 2rem;
+  text-align: center;
+  @media (min-width: 550px) {
+    padding: 0 2rem;
+  }
 `;
 
 const Subtitle = styled.div`
-  text-align: center;
   font-size: 16px;
   margin-bottom: 3rem;
   line-height: 32px;
+  @media (min-width: 550px) {
+    text-align: center;
+  }
+`;
+
+const StyledSubtitle = styled(Subtitle)`
+  text-align: center;
 `;
 
 const Image = styled.img`
@@ -134,8 +158,10 @@ const Image = styled.img`
 `;
 
 const SubTextWrapper = styled.div`
-  width: 700px;
-  margin: 3rem auto;
+  @media (min-width: 767px) {
+    width: 700px;
+    margin: 3rem auto;
+  }
 `;
 
 export default App;
