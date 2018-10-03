@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  api:
+    image: golang:1.11.0-alpine
+    container_name: api
+    links:
+      - mongodb
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/go/src/iv-code-challenge/api
+    working_dir: /go/src/iv-code-challenge/api
+    command: go run main.go
+
+  mongodb:
+    image: mongo:3.4
+    command: mongod --httpinterface --rest
+    ports:
+      - '27017:27017'

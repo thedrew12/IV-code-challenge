@@ -29,9 +29,20 @@ class Demo extends React.Component<Props, State> {
   };
   onChange = (key: string, value: string): void =>
     this.setState({ [key]: value });
-  onSubmit = (e: Object) => {
+  onSubmit = async (e: Object) => {
     e.preventDefault();
     // post values in state to API
+    await fetch('http://localhost:8080', {
+      method: 'POST',
+      body: this.state
+    }).then(response =>
+      response.json().then(json => {
+        if (!response.ok) {
+          return Promise.reject(json);
+        }
+        return json;
+      })
+    );
   };
   render() {
     const {
