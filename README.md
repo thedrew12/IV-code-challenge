@@ -32,5 +32,5 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 - start the FE with `yarn start`
 - start the backend server by navigating to inside the `/api` dir and `docker-compose up --build, once that is up you should be able to submit a successful form to the DB
-- to see the data download (Mongodb Compass)[https://www.mongodb.com/download-center?jmp=hero#compass] and connect to `Hostname: localhost` and `Port: 2717` and you should see
+- to see the data download [Mongodb Compass](https://www.mongodb.com/download-center?jmp=hero#compass) and connect to `Hostname: localhost` and `Port: 2717` and you should see
   a `submissions-api` with a collection of `submissions`.
