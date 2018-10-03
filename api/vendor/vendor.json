@@ -15,6 +15,12 @@
 			"revisionTime": "2018-09-03T15:43:05Z"
 		},
 		{
+			"checksumSHA1": "dTSETLqmJ1OXyuy7kOfwg71w4fQ=",
+			"path": "github.com/rs/cors",
+			"revision": "9a47f48565a795472d43519dd49aac781f3034fb",
+			"revisionTime": "2018-10-01T16:49:45Z"
+		},
+		{
 			"checksumSHA1": "bS5Kp6YjeXz4nvvS55CqIBP+HzM=",
 			"path": "gopkg.in/mgo.v2",
 			"revision": "9856a29383ce1c59f308dd1cf0363a79b5bef6b5",

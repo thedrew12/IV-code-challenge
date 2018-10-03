@@ -5,10 +5,6 @@ import Input from './Input';
 import Button from './Button';
 import enterpriseIcon from '../icons/enterprise.svg';
 
-type Props = {
-  handleSubmit: () => void
-}
-
 type State = {
   firstName: string,
   lastName: string,
@@ -18,34 +14,37 @@ type State = {
   phoneNumber: string
 }
 
-class Demo extends React.Component<Props, State> {
+class Demo extends React.Component<void, State> {
   state = {
     firstName: '',
     lastName: '',
     jobTitle: '',
     companyName: '',
     workEmail: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    hasSubmitted: false
   };
   onChange = (key: string, value: string): void =>
     this.setState({ [key]: value });
-  onSubmit = async (e: Object) => {
+  onSubmit = async (e: Object): void => {
+    const { hasSubmitted, ...formValues } = this.state;
     e.preventDefault();
     // post values in state to API
-    await fetch('http://localhost:8080', {
+    await fetch('http://localhost:8080/submissions/', {
       method: 'POST',
-      body: this.state
+      body: JSON.stringify(formValues)
     }).then(response =>
       response.json().then(json => {
         if (!response.ok) {
           return Promise.reject(json);
         }
-        return json;
+        return this.setState({ hasSubmitted: true });
       })
     );
   };
   render() {
     const {
+      hasSubmitted,
       firstName,
       lastName,
       jobTitle,
@@ -62,58 +61,63 @@ class Demo extends React.Component<Props, State> {
             The world’s best companies use InVision Enterprise to build better
             products, faster.
           </Subtitle>
-          <form onSubmit={this.onSubmit}>
-            <Grid>
-              <Input
-                id="firstName"
-                label="First Name"
-                placeholder="John"
-                type="text"
-                onChange={e => this.onChange('firstName', e.target.value)}
-                value={firstName}
-              />
-              <Input
-                placeholder="Smith"
-                label="Last Name"
-                type="text"
-                onChange={e => this.onChange('lastName', e.target.value)}
-                value={lastName}
-              />
-              <Input
-                placeholder="Designer"
-                label="Job Title"
-                type="text"
-                onChange={e => this.onChange('jobTitle', e.target.value)}
-                value={jobTitle}
-              />
-              <Input
-                placeholder="Apple"
-                label="Company Name"
-                type="text"
-                onChange={e => this.onChange('companyName', e.target.value)}
-                value={companyName}
-              />
-              <Input
-                placeholder="name@email.com"
-                label="Work Email"
-                type="email"
-                onChange={e => this.onChange('workEmail', e.target.value)}
-                value={workEmail}
-              />
-              <Input
-                placeholder="555-123-4567"
-                label="Phone Number"
-                type="text"
-                onChange={e => this.onChange('phoneNumber', e.target.value)}
-                value={phoneNumber}
-              />
-            </Grid>
-            <Margin>
-              <Button.Primary onClick={this.onSubmit} type="submit">
-                Request a demo
-              </Button.Primary>
-            </Margin>
-          </form>
+          {hasSubmitted && (
+            <Subtitle>Request has been submitted. Thank you!</Subtitle>
+          )}
+          {!hasSubmitted && (
+            <form onSubmit={this.onSubmit}>
+              <Grid>
+                <Input
+                  id="firstName"
+                  label="First Name"
+                  placeholder="John"
+                  type="text"
+                  onChange={e => this.onChange('firstName', e.target.value)}
+                  value={firstName}
+                />
+                <Input
+                  placeholder="Smith"
+                  label="Last Name"
+                  type="text"
+                  onChange={e => this.onChange('lastName', e.target.value)}
+                  value={lastName}
+                />
+                <Input
+                  placeholder="Designer"
+                  label="Job Title"
+                  type="text"
+                  onChange={e => this.onChange('jobTitle', e.target.value)}
+                  value={jobTitle}
+                />
+                <Input
+                  placeholder="Apple"
+                  label="Company Name"
+                  type="text"
+                  onChange={e => this.onChange('companyName', e.target.value)}
+                  value={companyName}
+                />
+                <Input
+                  placeholder="name@email.com"
+                  label="Work Email"
+                  type="email"
+                  onChange={e => this.onChange('workEmail', e.target.value)}
+                  value={workEmail}
+                />
+                <Input
+                  placeholder="555-123-4567"
+                  label="Phone Number"
+                  type="text"
+                  onChange={e => this.onChange('phoneNumber', e.target.value)}
+                  value={phoneNumber}
+                />
+              </Grid>
+              <Margin>
+                <Button.Primary onClick={this.onSubmit} type="submit">
+                  Request a demo
+                </Button.Primary>
+              </Margin>
+            </form>
+          )}
         </Content>
       </StyledCard>
     );

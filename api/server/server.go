@@ -5,8 +5,9 @@ import (
 	"iv-code-challenge/api/handlers"
 	"log"
 	"net/http"
-	"os"
-	"github.com/gorilla/handlers"
+	// "os"
+	"github.com/rs/cors"
+	// "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )
 
@@ -21,8 +22,15 @@ func NewServer(ss services.ISubmissionService) *Server {
 }
 
 func (s *Server) Start() {
+	handler := cors.New(cors.Options{
+		AllowedOrigins: []string{
+			"http://localhost:3000",
+		},
+		AllowedMethods: []string{"POST"},
+		AllowedHeaders: []string{"*", ""}, // empty string works around a weird bug in cors package
+	}).Handler(s.router)
 	log.Println("Listening on port 8080")
-	if err := http.ListenAndServe(":8080", handlers.LoggingHandler(os.Stdout, s.router)); err != nil {
+	if err := http.ListenAndServe(":8080", handler); err != nil {
 		log.Fatal("http.ListenAndServe: ", err)
 	}
 }

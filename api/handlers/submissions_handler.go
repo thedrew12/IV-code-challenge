@@ -8,7 +8,6 @@ import (
 	"iv-code-challenge/api/domain"
 	"iv-code-challenge/api/services"
 	"iv-code-challenge/api/utils"
-	"log"
 )
 
 type submissionRouter struct {
@@ -27,9 +26,7 @@ func (sr* submissionRouter) createSubmissionHandler(w http.ResponseWriter, r *ht
 		utils.Error(w, http.StatusBadRequest, "Invalid request payload")
 		return
 	}
-	log.Println("DATA1", sub)
 	err = sr.submissionService.Create(&sub)
-	log.Println("DATA2", err)
 	if err != nil {
 		utils.Error(w, http.StatusInternalServerError, err.Error())
 		return
