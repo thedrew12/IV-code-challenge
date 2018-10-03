@@ -23,8 +23,14 @@ Desktop fonts: https://www.dropbox.com/s/bxruxeixou1ep26/desktop_fonts.zip?dl=0
 
 The only requirement here is React. Feel free to use whatever CSS framework or 3rd party lib to help with the challenge. Internally, we use React@16.3.x, styled-components, and NextJS. The tool should work in the latest version of Chrome, Firefox, Safari, Edge, Internet Explorer, iOS Safari, and Samsung Internet.
 
-
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
+## Instructions
+
+- start the FE with `yarn start`
+- start the backend server by navigating to inside the `/api` dir and `docker-compose up --build, once that is up you should be able to submit a successful form to the DB
+- to see the data download (Mongodb Compass)[https://www.mongodb.com/download-center?jmp=hero#compass] and connect to `Hostname: localhost` and `Port: 2717` and you should see
+  a `submissions-api` with a collection of `submissions`.
